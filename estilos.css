@@ -1,0 +1,295 @@
+
+
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+     box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.contenedor{
+    width:80%;
+    margin: 0 auto;
+
+    
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Font/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    src: url('Font/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+/*-----------------------Menú---------------------------*/
+body{
+    font-family: 'Poppins', sans-serif;
+}
+header div nav{
+    
+    display: flex;
+    justify-content: space-between;
+     align-items: center;
+     padding: 5px 50px;
+    
+           
+}
+#menu{
+
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: white; /* o el color de tu menú */
+  z-index: 1000;            /* para que quede por encima */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra opcional */
+    
+}
+
+header div nav img {
+width: 30vh;
+
+}
+#ul ul{
+    list-style: none;
+    display: flex;
+    gap: 10vh;
+    
+}
+
+
+#ul ul li a{
+
+    text-decoration: none;
+    color: rgb(205,59,0);
+    font-size: 0.90rem;
+    font-weight: 700;
+    
+}
+
+#ul ul li a:hover{
+    color: rgb(8, 26, 194);
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+/* Sección 1 */
+
+
+body { 
+    background-color: aliceblue;
+    
+}
+
+
+/* Contenedor principal: pone texto y vinilo uno al lado del otro y centrado */
+.contenedor-vinilo-info {
+  display: flex;
+  align-items: center;      /* Centra verticalmente si hay diferencia de altura */
+  justify-content: center;  /* Centra horizontalmente en la pantalla */
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  margin-top: 25vh;
+}
+
+/* Texto */
+#info {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+  margin-left: 10vh;
+}
+
+#info h2 {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: rgb(255, 32, 125);
+}
+
+#info p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* Vinilo */
+#vinilo {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+/* Envoltorio del disco */
+.disco-wrapper {
+  width: 100%;
+  max-width: 65vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Contenedor interno */
+.disco-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tapa del disco */
+.tapa {
+  position: absolute;
+  top: 3vh;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Vinilo */
+.vinilo {
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  transform: translateX(0);
+}
+
+/* Animaciones */
+.vinilo.abrir {
+  animation: salirVinilo 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.vinilo.cerrar {
+  animation: entrarVinilo 2s ease-in forwards;
+}
+
+@keyframes salirVinilo {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-60%);
+  }
+}
+
+@keyframes entrarVinilo {
+  from {
+    transform: translateX(-60%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contenedor-vinilo-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .disco-wrapper {
+    max-width: 90vw;
+  }
+}
+
+
+   /* reproductor*/
+
+   .spotify-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+   
+  }
+
+  .spotify-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+   .spotify-containe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:18vh;
+  }
+  .spotify-containe div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  /* Boton*/
+
+  .btn {
+    display: inline-block;
+    padding: 10px 24vh;
+    background: #1DB954; /* verde Spotify */
+    color: white;
+    text-decoration: none;
+    border-radius: 13px;
+    font-weight: bold;
+    transition: background 0.3s;
+   
+  }
+  
+  .btn:hover {
+    background: #1ed760cc;
+  }
+
+ 
+  /*footer*/
+  #pie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: white;
+  }
+
+  #pie a img{
+    width: 8vh;
+    height: auto;
+  }
+
+  #pie p{
+    font-size: 0.9em;
+    font-weight: 700;
+    color: rgb(209, 59, 0);
+  }
+  
+  mi-proyecto/
+├── index.html
+├── css/
+│   └── estilos.css
+├── js/
+│   └── script.js
+├── img/
+│   └── imagen1.png
